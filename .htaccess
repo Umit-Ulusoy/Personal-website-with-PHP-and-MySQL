@@ -1,0 +1,5 @@
+RewriteEngine on
+
+RewriteRule ^home$ index.php?sef=$1[L,QSA]
+RewriteRule ^contact$ index.php?sef=$1 [L,QSA]
+RewriteRule ^about$ index.php?sef=$1 [L,QSA]
