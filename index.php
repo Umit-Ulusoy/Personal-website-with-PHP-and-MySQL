@@ -3,7 +3,7 @@
 if(isset($_GET["page"]))
 {
  $page = $_GET["page"];
-}else $page = 1;
+}else $page = NULL;
 ?>
 
 <!DOCTYPE html>
@@ -20,21 +20,16 @@ if(isset($_GET["page"]))
 
 require_once("./pages/header.php");
 
-switch($page)
+if($page == "home")
 {
- case 1:
-  require_once("./pages/home.php");
-  break;
-  case 2:
-   require_once("./pages/contact.php");
-   break;
-   case 3:
+    require_once("./pages/home.php");
+}else if($page == "contact")
+{
+    require_once("./pages/contact.php");
+}else if($page == "about")
+{
     require_once("./pages/about.php");
-    break;
-    default:
-    require_once("./pages/404.php");
-    break;
-}
+}else require_once("./pages/home.php");
 
 require_once("./pages/footer.php");
 ?>
