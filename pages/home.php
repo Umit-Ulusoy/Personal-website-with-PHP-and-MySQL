@@ -1,0 +1,1 @@
+<?php echo "<div role='alert'>Obaa, elcome to the homepage</div>"; ?>

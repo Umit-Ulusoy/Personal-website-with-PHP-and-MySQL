@@ -1,0 +1,1 @@
+<?php echo "obu.com"; ?>
