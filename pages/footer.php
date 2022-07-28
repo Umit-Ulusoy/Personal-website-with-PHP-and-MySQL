@@ -1,1 +1,3 @@
-<?php echo "Made by o bu"; ?>
+<div>
+ Made by o bu
+</div>
