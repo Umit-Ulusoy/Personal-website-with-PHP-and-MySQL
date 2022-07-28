@@ -1,4 +1,11 @@
 <?php
+require_once("./settings/Database.php");
+require_once("./settings/Settings.php   ");
+
+$db = new Database;
+$settings = new Settings($db->conn);
+
+
 
 if(isset($_GET["page"]))
 {
@@ -7,12 +14,14 @@ if(isset($_GET["page"]))
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="TR-tr">
 <head>
  <meta charset="UTF-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Document</title>
+ <title><?php echo $settings->title; ?></title>
+ <meta name="description" content="<?php echo $settings->description; ?>">
+ <meta name="keywords" content="<?php echo $settings->keywords; ?>">
 </head>
 <body>
 
