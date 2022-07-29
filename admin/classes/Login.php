@@ -15,10 +15,10 @@ class Login
 
  public function login()
  {
-  $query = $this->conn->prepare("SELECT * FROM managers WHERE Username=? AND Password");
+  $query = $this->conn->prepare("SELECT * FROM managers WHERE Username=? AND Password=?");
 
   $query->bindParam(1, $this->username, PDO::PARAM_STR);
-  $query->bindParam(2, $his->password, PDO::PARAM_STR);
+  $query->bindParam(2, $this->password, PDO::PARAM_STR);
   
   $query->execute();
 
