@@ -6,6 +6,8 @@ class Settings
  public $title;
  public $description;
  public $keywords;
+ public $header;
+ public $footer;
 
  public function __CONSTRUCT($conn)
  {
@@ -20,7 +22,9 @@ $setting = $settings->fetch(PDO::FETCH_OBJ);
    $this->title = $setting->Title;
    $this->description = $setting->Description;
    $this->keywords = $setting->Keywords;
-  }else
+   $this->header = $setting->Header;
+$this->footer = $setting->Footer;
+     }else
   {
    exit("There is a problem on setting page");
   }
