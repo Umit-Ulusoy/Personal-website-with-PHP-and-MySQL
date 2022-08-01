@@ -1,3 +1,4 @@
+ErrorDocument 404 /website/pages/404.php
 RewriteEngine on
 
 RewriteRule ^(home)$ index.php?page=$1 [L,QSA]
