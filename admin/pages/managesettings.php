@@ -39,18 +39,18 @@ $settings = new Settings($db->conn);
 <table>
   <tr>
     <td>E-mail Server</td>
-    <td><input type="text" required name="emailServer" placeholder="Please enter an email server" value="<?php echo security($settings->email); ?>" /></td>
+    <td><input type="text" name="emailServer" placeholder="Please enter an email server" value="<?php echo security($settings->email); ?>" /></td>
 </tr>
  <tr>
   <td>E-mail Adress</td>
-  <td><input type="email" required name="email" placeholder="Please enter  e-mail adress" value="<?php echo security($settings->email); ?>" /></td>
+  <td><input type="email" name="email" placeholder="Please enter  e-mail adress" value="<?php echo security($settings->email); ?>" /></td>
 </tr>
 <tr>
  <td>E-mail Password</td>
- <td><input type="password" required name="password" placeholder="Please enter your e-mail password" value="<?php echo security($settings->password); ?>" /></td>
+ <td><input type="password" name="password" placeholder="Please enter your e-mail password" value="<?php echo security($settings->password); ?>" /></td>
 </tr>
 <tr>
- <td><button type="submit" name="submit">Save Changes</button></td>
+ <td><button type="submit" name="change">Save Changes</button></td>
 </tr>
 </table>
 </form>
