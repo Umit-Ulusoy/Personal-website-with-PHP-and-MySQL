@@ -19,6 +19,14 @@ while($education = $educations->fetch(PDO::FETCH_ASSOC))
 }
  ?>
  <h2>Certificates</h2>
- None of Developments - 2016 <br />
- A1.3 English - 2022
+ <?php
+
+$certificates = $about->getCertificates();
+
+while($certificate = $certificates->fetch(PDO::FETCH_ASSOC))
+{
+ echo $certificate["Certificate"] . " - " . $certificate["IssuedDate"] . "<br />";
+}
+ ?>
+
 </div>

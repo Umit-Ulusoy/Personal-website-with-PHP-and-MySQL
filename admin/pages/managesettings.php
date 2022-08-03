@@ -37,9 +37,13 @@ $settings = new Settings($db->conn);
 </table>
 <h2>E-mail</h2>
 <table>
+  <tr>
+    <td>E-mail Server</td>
+    <td><input type="text" required name="emailServer" placeholder="Please enter an email server" value="<?php echo security($settings->email); ?>" /></td>
+</tr>
  <tr>
   <td>E-mail Adress</td>
-  <td><input type="email" required name="email" plceholder="Please enter the e-mail adress" value="<?php echo security($settings->email); ?>" /></td>
+  <td><input type="email" required name="email" placeholder="Please enter  e-mail adress" value="<?php echo security($settings->email); ?>" /></td>
 </tr>
 <tr>
  <td>E-mail Password</td>
