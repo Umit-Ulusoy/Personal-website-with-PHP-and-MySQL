@@ -12,6 +12,9 @@ if(isset($_GET["page"]))
 {
  $page = $_GET["page"];
 }else $page = NULL;
+
+//imporing contactactions.php file
+require_once("./pages/contactactions.php");
 ?>
 
 <!DOCTYPE html>

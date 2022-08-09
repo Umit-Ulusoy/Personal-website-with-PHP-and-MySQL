@@ -9,6 +9,8 @@ if(!isset($_SESSION["loggedIn"]))
  header("Location: login.php");
 }
 
+
+
 require_once("../settings/Database.php");
 require_once("../settings/functions.php");
 
@@ -30,7 +32,6 @@ if($page == 1)
  if(isset($_POST["change"]))
  {
 
-  //echo var_dump($_POST["title"]);
 
   $change->title = security($_POST["title"]);
   $change->description = security($_POST["description"]);
