@@ -1,7 +1,9 @@
+
+
+
 <?php
 
 session_start();
-
 
 
 if(!isset($_SESSION["loggedIn"]))
@@ -42,8 +44,7 @@ if($page == 1)
   $change->email = security($_POST["email"]);
   $change->password = security($_POST["password"]);
 
-  //$change->changeSettings();
-  if($change->changeSettings()->rowCount() > 0)
+    if($change->changeSettings()->rowCount() > 0)
   {
    echo "<div role='alert'>Changes saved successfully</div>";
   }else echo "<div role='alert'>Changes could not save!</div>";
@@ -51,7 +52,6 @@ if($page == 1)
 
  }
 }
-
 ?>
 
 <!DOCTYPE html>

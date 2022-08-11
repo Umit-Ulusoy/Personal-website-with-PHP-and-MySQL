@@ -9,7 +9,7 @@ if($homeClass->getHome()->rowCount() > 0)
 {
  echo "<h1>$home->Headline</h1>";
  echo "<pre>";
- echo $home->Subline;
+ echo $home->Content;
  echo "</pre>";
 }else header("Location: pages/404.php");
 
