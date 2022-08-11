@@ -11,11 +11,11 @@ $home = $homeClass->getHome()->fetch(PDO::FETCH_OBJ);
  <h1>Manage The Home Page</h1>
  <p>You can change the fields in the home page above</p>
 
- <form action="?page=2" method="POST">
+ <form action="" method="POST">
   <table>
    <tr>
     <td>Headline: </td>
-    <td><input type="text required name="headline" placeholder="Enter a headline" value="<?php echo $home->Headline; ?>" /></td>
+    <td><input type="text" required name="headline" placeholder="Enter a headline" value="<?php echo $home->Headline; ?>" /></td>
 </tr>
 <tr>
  <td>Content: </td>

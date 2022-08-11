@@ -51,6 +51,30 @@ if($page == 1)
 
 
  }
+}else if($page == 2)
+{
+
+  require_once("./classes/ChangeHome.php");
+
+  $changeHome = new ChangeHome($db->conn);
+  if(isset($_POST["change"]))
+  {
+
+    if(empty($_POST["headline"]) OR empty($_POST["content"]))
+    {
+      echo "<div role='alert'>Please fill out all the fields</div>";
+
+          }else{
+
+      $changeHome->headline = security($_POST["headline"]);
+      $changeHome->content = security($_POST["content"]);
+
+      if($changeHome->changeHome()->rowCount() > 0)
+      {
+        echo "<div role='alert'>Changes saved successfully</div>";
+      }else echo "<div role='alert'>Changes could not be saved</div>";
+    }
+  }
 }
 ?>
 
