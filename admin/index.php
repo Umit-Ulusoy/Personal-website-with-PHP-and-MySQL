@@ -75,7 +75,13 @@ if($page == 1)
       }else echo "<div role='alert'>Changes could not be saved</div>";
     }
   }
-}
+}else if($page == 4)
+{
+
+  require_once("./classes/about/changeabout.php");
+
+  $about = new ChangeAbout($db->conn);
+  }
 ?>
 
 <!DOCTYPE html>

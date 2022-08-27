@@ -14,7 +14,7 @@ $getCertificate = $about->getCertificates();
  <form action="?page=4" method="POST">
   <input type="text" required name="headline" placeholder="Enter the headline" value="<?php echo $getAbout->Headline; ?>" /><br />
   <textarea name="content" placeholder="Enter the content"><?php echo $getAbout->Content; ?></textarea>
-  <button type="submit" name="change">Save Changes</button>
+  <button type="submit" name="changeAbout">Save Changes</button>
   <input type="reset" />
 </form>
 </div>
