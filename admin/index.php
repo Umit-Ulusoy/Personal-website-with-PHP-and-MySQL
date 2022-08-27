@@ -81,7 +81,8 @@ if($page == 1)
   require_once("./classes/about/changeabout.php");
 
   $about = new ChangeAbout($db->conn);
-  }
+  require_once("./classes/about/aboutactions.php");
+}
 ?>
 
 <!DOCTYPE html>
