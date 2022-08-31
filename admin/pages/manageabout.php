@@ -31,7 +31,7 @@ while( $education = $getEducation->fetch(PDO::FETCH_OBJ))
   <input type="text" required name="education" placeholder="Enter the education" value="<?php echo $education->Education; ?>" /> - 
   <input type="text" required name="graduationDate" placeholder="Enter the graduation date" value="<?php echo $education->GraduationDate; ?>" /> 
   <input type="hidden" name="id" value="<?php echo $education->Id; ?>" />
-  <button type="submit" name="editEducation">Edit</button>
+  <button type="submit" name="changeEducation">Edit</button>
   <button type="submit" name="deleteEducation">Delete</button>
   <button type="reset">Reset</button>
 </form>
