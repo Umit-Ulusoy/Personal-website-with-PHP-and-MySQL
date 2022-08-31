@@ -72,4 +72,42 @@ class ChangeAbout
   return $deleteEducation;
  }
  
+ public function addCertificate()
+ {
+
+  $addCertificate = $this->conn->prepare("INSERT INTO certificates SET Certificate=?, IssuedDate=?");
+
+  $addCertificate->bindParam(1, $this->certificateName, PDO::PARAM_STR);
+  $addCertificate->bindParam(2, $this->issuedDate, PDO::PARAM_INT);
+
+  $addCertificate->execute();
+
+  return $addCertificate;
+ }
+
+ public function changeCertificate()
+ {
+
+  $changeCertificate = $this->conn->prepare("UPDATE certificates SET Certificate=?, IssuedDate=? WHERE Id=?");
+
+  $changeCertificate->bindParam(1, $this->certificateName, PDO::PARAM_STR);
+  $changeCertificate->bindParam(2, $this->issuedDate, PDO::PARAM_INT);
+  $changeCertificate->bindParam(3, $this->certificateId, PDO::PARAM_INT);
+
+  $changeCertificate->execute();
+
+  return $changeCertificate;
+ }
+
+ public function deleteCertificate()
+ {
+
+  $deleteCertificate = $this->conn->prepare("DELETE FROM certificates WHERE Id=?");
+
+  $deleteCertificate->bindParam(1, $this->certificateId, PDO::PARAM_INT);
+
+  $deleteCertificate->execute();
+
+  return $deleteCertificate;
+ }
 }

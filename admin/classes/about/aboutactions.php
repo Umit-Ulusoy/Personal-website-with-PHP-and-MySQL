@@ -28,19 +28,19 @@ if(isset($_POST["changeAbout"]))
 if(isset($_POST["addEducation"]))
 {
 
- if(empty($_POST["educationName"]) OR empty($_POST["graduationDate"]))
+ if(empty($_POST["education"]) OR empty($_POST["graduationDate"]))
  {
 
   echo "<div role='alert'>Please fill out all the fields!</div>";
    }else{
 
- $about->educationName = security($_POST["educationName"]);
+ $about->educationName = security($_POST["education"]);
  $about->graduationDate = security($_POST["graduationDate"]);
 
  if($about->addEducation()->rowCount() > 0)
  {
 
-  echo "<div role='alert'>The education is added successfully</div>";
+  echo "<div role='alert'>The education added successfully</div>";
  }else echo "<div role='alert'>The education could not be added!</div>";
 }
 
@@ -89,4 +89,69 @@ if(isset($_POST["deleteEducation"]))
   }else echo "<div role='alert'>The education could not be deleted!</div>";
  }
 
+}
+
+//Manage certificate actions
+
+//Add certificate actions
+if(isset($_POST["addCertificate"]))
+{
+
+ if(empty($_POST["certificate"]) OR empty($_POST["issuedDate"]))
+ {
+
+  echo "<div role='alert'>Please fill out all the fields!</div>";
+ }else{
+
+  $about->certificateName = security($_POST["certificate"]);
+  $about->issuedDate = security($_POST["issuedDate"]);
+
+  if($about->addCertificate()->rowCount() > 0)
+  {
+
+   echo "<div role='alert'>The certificate added successfully</div>";
+  }else echo "<div role='alert'>The certificate could not be added!</div>";
+ }
+}
+
+//Change certificate actions
+if(isset($_POST["changeCertificate"]))
+{
+
+ if(empty($_POST["certificate"]) OR empty($_POST["issuedDate"]) OR empty($_POST["id"]))
+ {
+
+  echo "<div role='alert'>Please fill out all the fields!</div>";
+ }else{
+
+  $about->certificateId = security($_POST["id"]);
+  $about->certificateName = security($_POST["certificate"]);
+  $about->issuedDate = security($_POST["issuedDate"]);
+
+  if($about->changeCertificate()->rowCount() > 0)
+  {
+
+   echo "<div role='alert'>The certificate saved successfully</div>";
+  }else echo "<div role='alert'>The certificate could not be saved!</div>";
+ }
+}
+
+//delete certificate actions
+if(isset($_POST["deleteCertificate"]))
+{
+
+ if(empty($_POST["id"]))
+ {
+
+  echo "<div role='alert'>Ops, something went wrong!</div>";
+ }else{
+
+  $about->certificateId = security($_POST["id"]);
+
+  if($about->deleteCertificate()->rowCount() > 0)
+  {
+
+   echo "<div role='alert'>The certificate deleted successfully</div>";
+  }else echo "<div role='alert'>The certificate could not be deleted!</div>";
+ }
 }

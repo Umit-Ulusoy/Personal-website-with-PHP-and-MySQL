@@ -18,6 +18,16 @@ $getCertificate = $about->getCertificates();
   <input type="reset" />
 </form>
 </div>
+
+<h1>Add a new Education</h1>
+<div>
+  <form action="?page=4" method="POST">
+    
+<input type="text" name="education" required placeholder="Enter an education" />
+<input type="number" required name="graduationDate" />
+<button name="addEducation" type="submit">Add a new one</button>
+</form>
+</div>
 <div>
  <h2>Manage Educations</h2>
  <?php
@@ -41,6 +51,17 @@ while( $education = $getEducation->fetch(PDO::FETCH_OBJ))
  }else echo "<div role='alert'>There is no any education info</div>";
  ?>
  </div>
+
+ <h1>Add a new Certificate</h1>
+<div>
+  <form action="?page=4" method="POST">
+    
+<input type="text" name="certificate" required placeholder="Enter a certificate" />
+<input type="number" required name="issuedDate" />
+<button name="addCertificate" type="submit">Add a new one</button>
+</form>
+</div>
+
  <div>
  <h2>Manage Certificates</h2>
  <?php
@@ -54,7 +75,7 @@ while( $certificate = $getCertificate->fetch(PDO::FETCH_OBJ))
   <input type="text" required name="certificate" placeholder="Enter the certificate" value="<?php echo $certificate->Certificate; ?>" /> - 
   <input type="text" required name="issuedDate" placeholder="Enter the issued date" value="<?php echo $certificate->IssuedDate; ?>" /> 
   <input type="hidden" name="id" value="<?php echo $certificate->Id; ?>" />
-  <button type="submit" name="editCertificate">Edit</button>
+  <button type="submit" name="changeCertificate">Edit</button>
   <button type="submit" name="deleteCertificate">Delete</button>
   <button type="reset">Reset</button>
 </form>
