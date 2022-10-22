@@ -38,7 +38,7 @@ class ChangeAbout
 
   $addEducation = $this->conn->prepare("INSERT INTO educations SET Education=?, GraduationDate=?");
 
-  $addEducation->bindParam(1, $this->education, PDO::PARAM_STR);
+  $addEducation->bindParam(1, $this->educationName, PDO::PARAM_STR);
   $addEducation->bindParam(2, $this->graduationDate, PDO::PARAM_STR);
 
   $addEducation->execute();

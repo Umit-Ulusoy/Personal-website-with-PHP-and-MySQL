@@ -17,7 +17,7 @@ if(isset($_POST["changeAbout"]))
 
   echo "<div role='alert'>Changes saved successfully</div>";
  }else echo "<div role='alert'>There is no any change</div>";
-
+}
 
 }
 
@@ -37,14 +37,13 @@ if(isset($_POST["addEducation"]))
  $about->educationName = security($_POST["education"]);
  $about->graduationDate = security($_POST["graduationDate"]);
 
- if($about->addEducation()->rowCount() > 0)
+ if($about->addEducation()->rowCount())
  {
 
   echo "<div role='alert'>The education added successfully</div>";
  }else echo "<div role='alert'>The education could not be added!</div>";
 }
 
-}
 }
 
 //change education actions
@@ -61,7 +60,7 @@ if(isset($_POST["changeEducation"]))
   $about->educationName = security($_POST["education"]);
  $about->graduationDate = security($_POST["graduationDate"]);
 
- if($about->changeEducation()->rowCount() > 0)
+ if($about->changeEducation()->rowCount())
  {
 
   echo "<div role='alert'>The education changed successfullly</div>";

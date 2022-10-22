@@ -27,54 +27,20 @@ $db = new Database;
 if($page == 1)
 {
 
- require_once("./classes/ChangeSettings.php");
+ require_once("./classes/settings/ChangeSettings.php");
 
  $change = new ChangeSettings($db->conn);
+ require_once("classes/settings/settingActions.php");
 
- if(isset($_POST["change"]))
- {
-
-
-  $change->title = security($_POST["title"]);
-  $change->description = security($_POST["description"]);
-  $change->keywords = security($_POST["keywords"]);
-  $change->header = security($_POST["header"]);
-  $change->footer = security($_POST["footer"]);
-  $change->emailServer = security($_POST["emailServer"]);
-  $change->email = security($_POST["email"]);
-  $change->password = security($_POST["password"]);
-
-    if($change->changeSettings()->rowCount() > 0)
-  {
-   echo "<div role='alert'>Changes saved successfully</div>";
-  }else echo "<div role='alert'>Changes could not save!</div>";
-
-
- }
+ 
 }else if($page == 2)
 {
 
-  require_once("./classes/ChangeHome.php");
+  require_once("./classes/home/ChangeHome.php");
 
   $changeHome = new ChangeHome($db->conn);
-  if(isset($_POST["change"]))
-  {
-
-    if(empty($_POST["headline"]) OR empty($_POST["content"]))
-    {
-      echo "<div role='alert'>Please fill out all the fields</div>";
-
-          }else{
-
-      $changeHome->headline = security($_POST["headline"]);
-      $changeHome->content = security($_POST["content"]);
-
-      if($changeHome->changeHome()->rowCount() > 0)
-      {
-        echo "<div role='alert'>Changes saved successfully</div>";
-      }else echo "<div role='alert'>Changes could not be saved</div>";
-    }
-  }
+require_once("classes/home/homeActions.php");
+  
 }else if($page == 4)
 {
 

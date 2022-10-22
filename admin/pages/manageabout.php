@@ -32,7 +32,7 @@ $getCertificate = $about->getCertificates();
  <h2>Manage Educations</h2>
  <?php
 
- if($getEducation->rowCount() > 0)
+ if($getEducation->rowCount())
  {
 while( $education = $getEducation->fetch(PDO::FETCH_OBJ))
 {?>
@@ -66,7 +66,7 @@ while( $education = $getEducation->fetch(PDO::FETCH_OBJ))
  <h2>Manage Certificates</h2>
  <?php
 
- if($getCertificate->rowCount() > 0)
+ if($getCertificate->rowCount())
  {
 while( $certificate = $getCertificate->fetch(PDO::FETCH_OBJ))
 {?>
